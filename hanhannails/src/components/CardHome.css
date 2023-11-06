@@ -1,0 +1,112 @@
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 600px;
+    flex-direction: column;
+    margin: 20px;
+    background: #495464;
+    animation-name: card-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes card-in {
+    from {
+        margin: 20px;
+    }
+    to {
+        box-shadow: 10px 10px 0px #717c8c, 20px 20px 0px #a1adbb, -10px -10px 0px #717c8c, -20px -20px 0px #a1adbb;
+        margin: 20px;
+    }
+  }
+  @keyframes card-out {
+    from {
+        box-shadow: 10px 10px 0px #717c8c, 20px 20px 0px #a1adbb, -10px -10px 0px #717c8c, -20px -20px 0px #a1adbb;
+        margin: 20px;
+    }
+    to {
+        margin: 20px;
+    }
+  }
+@keyframes button-in {
+    from {
+        border-radius: 0px 20px;
+        background: #A6ABB9;
+    }
+    to {
+        border-radius: 20px 0px;
+        background: #fff;
+    }
+}
+@keyframes button-out {
+    from {
+        border-radius: 20px 0px;
+        background: #fff;
+    }
+    to {
+        border-radius: 0px 20px;
+        background: #A6ABB9;
+    }
+}
+.card-wrapper:hover {
+    animation-name: card-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.card-button:hover {
+    animation-name: button-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.first-card {
+    border-radius: 20px 0px 0px 200px;
+}
+
+.last-card {
+    border-radius: 0px 20px 200px 0px;
+}
+
+.card-img-home {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 20px 20px 0 20px;
+}
+
+.card-title-home, .card-text {
+    color: #fff;
+    margin: 16px 16px 0 16px;
+}
+
+.card-title-home {
+    font-size: 24px;
+}
+.card-text {
+    font-size: 16px;
+    padding: 0 20px;
+    height: 180px;
+}
+
+.card-button {
+    background: #A6ABB9;
+    color: #495464;
+    padding: 5px 20px;
+    border-radius: 0px 20px;
+    border: none;
+    font-size: 18px;
+    margin-top: 16px;
+    animation-name: button-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}

@@ -2,22 +2,45 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
-.container {
+.header {
     background: #495464;
     color: #fff;
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .header-item {
-    color: #fff;
-    font-size: 28px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 24px;
     margin: 10px 16px;
     text-decoration: none;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+@keyframes before {
+    0% {
+        transform: scale(1.2);
+    } 
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.header-item-selected {
+    color: rgba(255, 255, 255, 1);
 }
 
 .header-item:hover {
-    text-decoration: underline;
+    animation-name: before;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
+

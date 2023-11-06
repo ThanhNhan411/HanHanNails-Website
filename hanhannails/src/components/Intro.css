@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,200&family=Libre+Baskerville&family=Lobster&family=Raleway:wght@300;400&display=swap');
+.container {
+    margin: 0;
+}
+.intro-container {
+    background: #A6ABB9;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.opening {
+    color: #fff;
+}
+
+.content {
+    max-width: 600px;
+}
+
+p {
+    font-size: 22px;
+}
+
+.slogan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E8E8E8;
+}
+
+.slogan {
+    font-family: 'Lobster', sans-serif;
+    font-size: 24px;
+}
+
+.slogan-img {
+    width: 380px;
+    margin: 20px 40px;
+}
