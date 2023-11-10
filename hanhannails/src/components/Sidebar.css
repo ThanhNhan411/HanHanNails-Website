@@ -1,0 +1,40 @@
+.sidebar-container {
+    background: #f1f1f1;
+    width: 20%;
+}
+
+.sidebar-item {
+    padding: 5px;
+    list-style-type: none;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: left;
+    color: #000;
+}
+
+.sidebar-item-selected {
+    color: rgb(164, 141, 141)
+}
+
+.sidebar-item-container {
+    margin-top: 30px;
+}
+
+@keyframes side {
+    0% {
+        transform: scale(1.1);
+    } 
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        color: rgb(164, 141, 141)
+    }
+}
+
+.sidebar-item:hover {
+    animation-name: side;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}

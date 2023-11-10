@@ -1,8 +1,13 @@
+.cardhome-container {
+    display: flex;
+    flex-direction: column;
+}
 .cards-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
     padding-top: 20px;
+    flex-wrap: wrap;
 }
 .card-wrapper {
     display: flex;
@@ -25,12 +30,14 @@
     to {
         box-shadow: 10px 10px 0px #717c8c, 20px 20px 0px #a1adbb, -10px -10px 0px #717c8c, -20px -20px 0px #a1adbb;
         margin: 20px;
+        transform: scale(1.02);
     }
   }
   @keyframes card-out {
     from {
         box-shadow: 10px 10px 0px #717c8c, 20px 20px 0px #a1adbb, -10px -10px 0px #717c8c, -20px -20px 0px #a1adbb;
         margin: 20px;
+        transform: scale(1.02);
     }
     to {
         margin: 20px;
@@ -109,4 +116,15 @@
     animation-name: button-out;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+}
+
+#more-link {
+    padding-bottom: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #495464;
+}
+
+#more-link:hover {
+    color: #717c8c;
 }

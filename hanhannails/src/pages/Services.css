@@ -1,0 +1,29 @@
+.services {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+.services-item {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.services-title {
+    width: 100%;
+}
+
+.filter-services {
+    width: 100%;   
+    display: flex;
+    justify-content: space-between;
+}
+
+#dropdown-item-button {
+    color: #000;
+    background: #d9d9d9;
+    border: none;
+    margin: 20px;
+}

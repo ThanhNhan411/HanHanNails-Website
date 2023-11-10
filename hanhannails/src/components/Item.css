@@ -1,0 +1,69 @@
+@keyframes item-in {
+    from {
+        margin: 20px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    }
+    to {
+        box-shadow: 5px 5px 0px #717c8c, 10px 10px 0px #a1adbb;
+        margin: 20px;
+        transform: scale(1.05);
+    }
+  }
+  @keyframes item-out {
+    from {
+        box-shadow: 5px 5px 0px #717c8c, 10px 10px 0px #a1adbb;
+        margin: 20px;
+        transform: scale(1.05);
+    }
+    to {
+        margin: 20px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+  }
+
+.item-wrapper {
+    width: 200px;
+    margin: 10px;
+    border-radius: 20px 20px 0 0;
+    background:#495464;
+    animation-name: item-out;
+    animation-fill-mode: both;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+.item-wrapper:hover {
+    animation-name: item-in;
+    animation-fill-mode: both;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+.item-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+}
+
+.item-text {
+    margin-top: 10px;
+}
+
+.item-title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.item-star {
+    color: gold;
+    margin: 0;
+}
+
+.item-price {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}

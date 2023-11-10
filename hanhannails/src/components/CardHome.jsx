@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './CardHome.css';
 
 function CardHome () {
     return (
+        <div className="cardhome-container">
         <div className="cards-container">
             <div className="card-wrapper first-card">
                 <img className="card-img-home" src="https://i0.wp.com/lilianbeauty.vn/wp-content/uploads/2022/04/nail-xinh-don-gian-7.jpg?fit=800%2C450&ssl=1" alt="" />
@@ -36,6 +38,11 @@ function CardHome () {
                 Dịch vụ massage mặt của chúng tôi mang đến cho bạn một trải nghiệm thư giãn tuyệt vời. Đây không chỉ là một dịch vụ làm đẹp, mà còn là một cách tuyệt vời để giảm bớt căng thẳng sau một ngày dài....
                 </p>
                 <button className="card-button">Đặt lịch</button>
+            </div>
+            
+        </div>
+            <div className="morelink">
+            <Link id="more-link" to='/services'>Xem thêm...</Link>
             </div>
         </div>
     )

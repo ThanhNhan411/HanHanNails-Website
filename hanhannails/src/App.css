@@ -55,5 +55,6 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: linear-gradient(#37404d, #f1f1f1);
+  border-radius: 10px;
 }

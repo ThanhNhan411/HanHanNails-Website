@@ -1,0 +1,119 @@
+.service-wrapper {
+    position: relative;
+}
+
+.service-img {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 40px);
+    padding: 20px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.service-text:hover {
+    animation-name: service-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.service-text {
+    z-index: 1;
+    position: absolute;
+    width: calc(40% - 40px);
+    top: 20px;
+    left: 60%;
+    text-align: left;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(73,84,100, 0.8), rgba(73,84,100, 0.8));
+    padding: 20px;
+    animation-name: service-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.service-btn {
+    background: #A6ABB9;
+    color: #495464;
+    padding: 5px 20px;
+    border-radius: 0px 0px 20px 0px;
+    border: none;
+    font-size: 18px;
+    margin-top: 16px;
+    width: 100px;
+    
+}
+
+.service-title
+,.service-price
+,.service-des
+,.service-des-text
+,.service-btn {
+    margin: 5px 10px;
+}
+
+.service-btn {
+    animation: service-btn-in 0.3s forwards;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.service-btn:hover {
+    animation: service-btn-out 0.3s forwards;
+}
+
+@keyframes service-btn-in {
+    from {
+        background: #fff;
+        transform: scale(1.1);
+    } to {}
+}
+
+@keyframes service-btn-out {
+    from {
+        
+    } to {
+        background: #fff;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes service-in {
+    from {
+        box-shadow: -50px 0px 0px rgba(113,124,140, 0.8), -100px 0px 0px rgba(113,124,140, 0.6);
+    } to {
+        
+    }
+}
+
+@keyframes service-out {
+    from {
+    } to {
+        box-shadow: -50px 0px 0px rgba(113,124,140, 0.8), -100px 0px 0px rgba(113,124,140, 0.6);
+    }
+}
+
+.service-img-container {
+    top: 540px;
+    left: 20px;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+}
+
+.service-sub-img {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+    padding: 5px;
+    object-fit: cover;
+}
+
+.service-sub-img-selected {
+    outline: 3px solid #495464 ;
+}
+

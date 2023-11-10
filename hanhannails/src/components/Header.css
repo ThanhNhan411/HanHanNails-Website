@@ -2,14 +2,32 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
+
+.header-logo {
+    position: absolute;
+    height: 60px;
+    left: 20px;
+    filter: drop-shadow(3px 3px 3px rgba(255, 255, 255, 0.6));
+}
+
 .header {
+    position: relative;
     background: #495464;
     color: #fff;
     height: 64px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     width: 100%;
+}
+
+.header-item-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    right: 20px;
 }
 
 .header-item {
