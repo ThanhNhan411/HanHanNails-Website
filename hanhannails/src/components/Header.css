@@ -19,6 +19,12 @@
     align-items: center;
     justify-content:center;
     width: 100%;
+    z-index: 1000;
+}
+
+.header-login {
+    background: none;
+    position: fixed;
 }
 
 .header-item-container {
@@ -31,7 +37,7 @@
 }
 
 .header-item {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 24px;
     margin: 10px 16px;
     text-decoration: none;
@@ -60,5 +66,13 @@
     animation-name: before;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+}
+
+.header-login-icon {
+    font-size: 34px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: #fff;
 }
 

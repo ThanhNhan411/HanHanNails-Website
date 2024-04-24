@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,6 +27,8 @@ function App() {
         <Header/>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path='/services' element={<Services type='all'/>}/>
           <Route path='/service' element={<ServiceDetail/>}>
             <Route path=':itemId' element={<ServiceDetail/>}/> 
