@@ -1,0 +1,341 @@
+/* Slider.css */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Main Slider */
+.main-slider {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 800px;
+}
+
+/* Image Wrapper */
+.slider-image-wrapper {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.slider-image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Overlay Gradient */
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+/* Caption Styling */
+.slider-caption {
+    z-index: 10;
+    bottom: 15%;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.caption-center {
+    text-align: center;
+}
+
+.caption-right {
+    text-align: right;
+}
+
+.caption-content {
+    max-width: 600px;
+    animation: slideInUp 1s ease-out;
+}
+
+.caption-center .caption-content {
+    margin: 0 auto;
+}
+
+.caption-right .caption-content {
+    margin-left: auto;
+}
+
+/* Typography */
+.slide-subtitle {
+    display: inline-block;
+    background: rgba(255, 107, 157, 0.9);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+
+.slide-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInLeft 1s ease-out 0.4s;
+    animation-fill-mode: both;
+}
+
+.slide-description {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: fadeInLeft 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+/* Buttons */
+.slide-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.8s;
+    animation-fill-mode: both;
+}
+
+.btn-primary-slider,
+.btn-secondary-slider {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary-slider {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.btn-primary-slider:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.btn-secondary-slider {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary-slider:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary-slider:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.slider-container:hover .carousel-control-prev,
+.slider-container:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    bottom: 40px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #ff6b9d;
+    width: 60px;
+}
+
+/* Quick Actions Bar */
+.quick-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #333;
+}
+
+.action-item:hover {
+    color: #ff6b9d;
+    transform: translateY(-2px);
+}
+
+.action-icon {
+    font-size: 20px;
+    color: #ff6b9d;
+}
+
+.discount-badge {
+    background: #ff6b9d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-slider {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .slider-image-wrapper {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .slide-actions {
+        justify-content: center;
+    }
+    
+    .caption-left,
+    .caption-right {
+        text-align: center;
+    }
+    
+    .caption-content {
+        margin: 0 auto;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .action-item {
+        justify-content: center;
+    }
+    
+    .btn-secondary-slider {
+        display: none;
+    }
+}

@@ -1,36 +1,100 @@
-import React from "react";
-import "./Header.css";
+import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from './assets/images/hanhannails.png';
-import { FaUserCircle } from 'react-icons/fa';
-
+import { FaUserCircle, FaBars, FaTimes } from 'react-icons/fa';
+import "./Header.css";
 
 function Header() {
     const location = useLocation();
     const path = location.pathname;
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 10;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navItems = [
+        { path: '/', label: 'Trang chủ', exact: true },
+        { path: '/intro', label: 'Giới thiệu' },
+        { path: '/services', label: 'Dịch vụ', includes: '/service' },
+        { path: '/nailsbox', label: 'Nailsbox' }
+    ];
 
     return (
-        <div className={(path === "/login" || path === "/register" ? "header header-login w-100" : "header w-100")}>
-            <img src={logo} alt="" className="header-logo" />
-            <div className="header-item-container">
-                <NavLink to='/' exact style={{textDecoration: 'none'}}>
-                    <p className={(path === "/" ? "header-item header-item-selected" : "header-item")}>Trang chủ</p>
+        <header className={`modern-header ${scrolled ? 'scrolled' : ''} ${(path === "/login" || path === "/register") ? 'login-page' : ''}`}>
+            <div className="header-container">
+                {/* Logo */}
+                <NavLink to="/" className="logo-wrapper">
+                    <img src={logo} alt="HanHan Nails" className="logo" />
                 </NavLink>
-                <NavLink to='/intro' style={{textDecoration: 'none'}}>
-                    <p className={(path === "/intro" ? "header-item header-item-selected" : "header-item")}>Giới thiệu</p>
-                </NavLink>
-                <NavLink to='/services' style={{textDecoration: 'none'}}>
-                    <p className={(path.includes("/service") ? "header-item header-item-selected" : "header-item")}>Dịch vụ</p>
-                </NavLink>
-                <NavLink to='/nailsbox' style={{textDecoration: 'none'}}>
-                    <p className={(path === "/nailsbox" ? "header-item header-item-selected" : "header-item")}>Nailsbox</p>
-                </NavLink>
-                <NavLink to='/login' style={{textDecoration: 'none'}}>
-                    <FaUserCircle className="header-login-icon" />
-                </NavLink>
-                
+
+                {/* Desktop Navigation */}
+                <nav className="desktop-nav">
+                    {navItems.map((item) => (
+                        <NavLink
+                            key={item.path}
+                            to={item.path}
+                            className={`nav-item ${
+                                item.exact ? (path === item.path ? 'active' : '') 
+                                : (item.includes ? path.includes(item.includes) : path === item.path) ? 'active' : ''
+                            }`}
+                        >
+                            <span className="nav-text">{item.label}</span>
+                            <span className="nav-indicator"></span>
+                        </NavLink>
+                    ))}
+                </nav>
+
+                {/* User Actions */}
+                <div className="user-actions">
+                    <NavLink to="/booking" className="booking-btn">
+                        Đặt lịch
+                    </NavLink>
+                    <NavLink to="/login" className="user-icon">
+                        <FaUserCircle />
+                    </NavLink>
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <button 
+                    className="mobile-menu-toggle"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                </button>
             </div>
-        </div>
+
+            {/* Mobile Navigation */}
+            <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
+                {navItems.map((item) => (
+                    <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={`mobile-nav-item ${
+                            item.exact ? (path === item.path ? 'active' : '') 
+                            : (item.includes ? path.includes(item.includes) : path === item.path) ? 'active' : ''
+                        }`}
+                        onClick={() => setMobileMenuOpen(false)}
+                    >
+                        {item.label}
+                    </NavLink>
+                ))}
+                <NavLink 
+                    to="/booking" 
+                    className="mobile-booking-btn"
+                    onClick={() => setMobileMenuOpen(false)}
+                >
+                    Đặt lịch ngay
+                </NavLink>
+            </div>
+        </header>
     );
 }
 
