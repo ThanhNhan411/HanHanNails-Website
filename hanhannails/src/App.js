@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AIDesignStudio from './pages/AIDesignStudio';
+import AboutUs from './pages/AboutUs';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +39,8 @@ function App() {
           <Route path='services/goidau' element={<Services type='goidau'/>}/>
           <Route path='services/chamsocda' element={<Services type='chamsocda'/>}/>
           <Route path='services/nails' element={<Services type='nails'/>}/>
+          <Route path='/ai-design' element={<AIDesignStudio /> }/>
+          <Route path='/about' element={<AboutUs /> }/>
         </Routes>
 
       </BrowserRouter>

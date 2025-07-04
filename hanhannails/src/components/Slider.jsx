@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
-import { FaPhone, FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
+import { FaPhone, FaArrowRight } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Slider.css';
 

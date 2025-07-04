@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import Footer from '../components/Footer';
 const Intro = React.lazy(() => import('../components/Intro'));
 const Slider = React.lazy(() => import('../components/Slider'));
 const CardHome = React.lazy(() => import('../components/CardHome'));
@@ -10,6 +11,7 @@ function Home() {
         <Slider/> 
         <Intro />
         <CardHome />
+        <Footer />
       </Suspense>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from './assets/images/hanhannails.png';
 import { FaUserCircle, FaBars, FaTimes } from 'react-icons/fa';
+import { IoSparklesSharp } from "react-icons/io5";
+
 import "./Header.css";
 
 function Header() {
@@ -22,9 +24,10 @@ function Header() {
 
     const navItems = [
         { path: '/', label: 'Trang chủ', exact: true },
-        { path: '/intro', label: 'Giới thiệu' },
+        { path: '/about', label: 'Giới thiệu' },
         { path: '/services', label: 'Dịch vụ', includes: '/service' },
-        { path: '/nailsbox', label: 'Nailsbox' }
+        { path: '/nailsbox', label: 'Nailsbox' },
+        { label: 'AI Design', path: '/ai-design', },
     ];
 
     return (
