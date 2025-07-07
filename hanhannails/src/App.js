@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AIDesignStudio from './pages/AIDesignStudio';
 import AboutUs from './pages/AboutUs';
+import Booking from './pages/Booking';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,6 +42,7 @@ function App() {
           <Route path='services/nails' element={<Services type='nails'/>}/>
           <Route path='/ai-design' element={<AIDesignStudio /> }/>
           <Route path='/about' element={<AboutUs /> }/>
+          <Route path='/booking' element={<Booking /> }/>
         </Routes>
 
       </BrowserRouter>
